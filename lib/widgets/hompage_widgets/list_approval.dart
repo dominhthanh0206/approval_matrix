@@ -11,7 +11,7 @@ class ListApprovalAdded extends StatelessWidget {
     return SizedBox(
       height: 600,
       child: ListView.separated(
-        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: listMatrix.length,
         itemBuilder: (context, index) {
           return Container(

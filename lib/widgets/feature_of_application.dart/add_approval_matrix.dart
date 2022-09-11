@@ -1,4 +1,5 @@
 import 'package:approval_matrix/create_matrix_screen.dart';
+import 'package:approval_matrix/home_page.dart';
 import 'package:approval_matrix/models/model_approval.dart';
 import 'package:flutter/material.dart';
 
@@ -32,9 +33,12 @@ class AddMatrixApprovalToList extends StatelessWidget {
             model.maxRange = int.parse(maximumNumber.text);
             model.numberApproval = int.parse(numberApproval.text);
             listMatrix.add(model);
-            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-              content: Text("Added To The List"),
-            ));
+            if (listMatrix.isNotEmpty) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text("Added To The List"),
+              ));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(),));
+            }
           },
           style: ElevatedButton.styleFrom(
               elevation: 0.0,
