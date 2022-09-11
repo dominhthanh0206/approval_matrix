@@ -32,6 +32,9 @@ class AddMatrixApprovalToList extends StatelessWidget {
             model.maxRange = int.parse(maximumNumber.text);
             model.numberApproval = int.parse(numberApproval.text);
             listMatrix.add(model);
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text("Added To The List"),
+            ));
           },
           style: ElevatedButton.styleFrom(
               elevation: 0.0,

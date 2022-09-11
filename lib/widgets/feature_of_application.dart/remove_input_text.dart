@@ -27,6 +27,9 @@ class ClearTextInTextField extends StatelessWidget {
             minimumNumber.clear();
             maximumNumber.clear();
             numberApproval.clear();
+             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text("Reset Successful"),
+            ));
           },
           style: ElevatedButton.styleFrom(
               elevation: 0.0,
